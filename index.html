@@ -6,8 +6,8 @@
     <title>Jeevan Chakra - Life Infrastructure, Not Just Finance</title>
     <meta name="description" content="The self-sustaining life orchestration system. Protection before growth. Continuity before returns.">
     
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230F4C5C'/><circle cx='50' cy='50' r='25' fill='none' stroke='%231B9C85' stroke-width='3'/><circle cx='50' cy='20' r='4' fill='%23F4A261'/></svg>">
+    <!-- Favicon with 8 dots -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230F4C5C'/><circle cx='50' cy='50' r='25' fill='none' stroke='%231B9C85' stroke-width='3'/><circle cx='50' cy='10' r='3' fill='%23F4A261'/><circle cx='75' cy='25' r='3' fill='%23F4A261'/><circle cx='90' cy='50' r='3' fill='%23F4A261'/><circle cx='75' cy='75' r='3' fill='%23F4A261'/><circle cx='50' cy='90' r='3' fill='%23F4A261'/><circle cx='25' cy='75' r='3' fill='%23F4A261'/><circle cx='10' cy='50' r='3' fill='%23F4A261'/><circle cx='25' cy='25' r='3' fill='%23F4A261'/></svg>">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -28,32 +28,48 @@
         body { font-family: 'Inter', sans-serif; }
         .chakra-pulse { animation: pulse 3s ease-in-out infinite; }
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.05) rotate(180deg); opacity: 0.8; }
+        }
+        .carousel-slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        .carousel-slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
     
-    <!-- Navbar -->
+    <!-- STICKY NAVBAR -->
     <nav class="bg-jc-teal text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <!-- Logo SVG -->
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition">
+                <!-- Logo SVG with 8 dots -->
                 <svg class="w-10 h-10 chakra-pulse" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="#1B9C85" opacity="0.3"/>
                     <circle cx="50" cy="50" r="30" fill="none" stroke="#1B9C85" stroke-width="3"/>
                     <circle cx="50" cy="50" r="20" fill="none" stroke="#F4A261" stroke-width="2" stroke-dasharray="5,5"/>
-                    <circle cx="50" cy="20" r="4" fill="#F4A261"/>
-                    <circle cx="80" cy="50" r="4" fill="#F4A261"/>
-                    <circle cx="50" cy="80" r="4" fill="#F4A261"/>
-                    <circle cx="20" cy="50" r="4" fill="#F4A261"/>
+                    <!-- 8 dots in circle (auspicious) -->
+                    <circle cx="50" cy="10" r="4" fill="#F4A261"/>
+                    <circle cx="85" cy="25" r="4" fill="#F4A261"/>
+                    <circle cx="90" cy="50" r="4" fill="#F4A261"/>
+                    <circle cx="85" cy="75" r="4" fill="#F4A261"/>
+                    <circle cx="50" cy="90" r="4" fill="#F4A261"/>
+                    <circle cx="15" cy="75" r="4" fill="#F4A261"/>
+                    <circle cx="10" cy="50" r="4" fill="#F4A261"/>
+                    <circle cx="15" cy="25" r="4" fill="#F4A261"/>
                 </svg>
                 <div>
                     <h1 class="text-xl font-bold">जीवन चक्र</h1>
                     <p class="text-xs opacity-80">Jeevan Chakra</p>
                 </div>
-            </div>
+            </a>
             <div class="hidden md:flex gap-6">
                 <a href="#vision" class="hover:text-jc-amber transition">Vision</a>
                 <a href="#system" class="hover:text-jc-amber transition">System</a>
@@ -62,40 +78,93 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-br from-jc-teal via-teal-700 to-jc-green text-white py-20">
-        <div class="container mx-auto px-4 text-center">
+    <!-- AUTO-SCROLLING HERO CAROUSEL -->
+    <header class="bg-gradient-to-br from-jc-teal via-teal-700 to-jc-green text-white py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <!-- Large Chakra Logo -->
-                <div class="flex justify-center mb-8">
-                    <svg class="w-32 h-32 chakra-pulse" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="45" fill="rgba(255,255,255,0.1)"/>
-                        <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="25" fill="none" stroke="#F4A261" stroke-width="2" stroke-dasharray="8,8"/>
-                        <circle cx="50" cy="15" r="5" fill="#F4A261"/>
-                        <circle cx="85" cy="50" r="5" fill="#F4A261"/>
-                        <circle cx="50" cy="85" r="5" fill="#F4A261"/>
-                        <circle cx="15" cy="50" r="5" fill="#F4A261"/>
-                        <circle cx="50" cy="50" r="8" fill="white"/>
-                    </svg>
-                </div>
                 
-                <h1 class="text-5xl md:text-6xl font-bold mb-4">
-                    जीवन चक्र
-                </h1>
-                <p class="text-3xl md:text-4xl font-semibold mb-6 text-teal-100">
-                    Jeevan Chakra
-                </p>
-                <p class="text-2xl md:text-3xl mb-8 text-amber-200 font-medium">
-                    पैसा चलाता नहीं - जीवन चलाता है
-                </p>
-                <p class="text-xl md:text-2xl text-teal-50 mb-12 max-w-3xl mx-auto">
-                    Life Infrastructure. Not Just Finance.
-                </p>
-                <a href="#waitlist" class="inline-block bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-full text-lg transition transform hover:scale-105 shadow-lg">
-                    Become a Chakra Member
-                </a>
+                <!-- Slide 1: Main Tagline -->
+                <div class="carousel-slide active text-center">
+                    <div class="flex justify-center mb-8">
+                        <svg class="w-32 h-32 chakra-pulse" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="rgba(255,255,255,0.1)"/>
+                            <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="#F4A261" stroke-width="2" stroke-dasharray="8,8"/>
+                            <!-- 8 dots -->
+                            <circle cx="50" cy="5" r="5" fill="#F4A261"/>
+                            <circle cx="88" cy="20" r="5" fill="#F4A261"/>
+                            <circle cx="95" cy="50" r="5" fill="#F4A261"/>
+                            <circle cx="88" cy="80" r="5" fill="#F4A261"/>
+                            <circle cx="50" cy="95" r="5" fill="#F4A261"/>
+                            <circle cx="12" cy="80" r="5" fill="#F4A261"/>
+                            <circle cx="5" cy="50" r="5" fill="#F4A261"/>
+                            <circle cx="12" cy="20" r="5" fill="#F4A261"/>
+                            <circle cx="50" cy="50" r="8" fill="white"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4">जीवन चक्र</h1>
+                    <p class="text-3xl md:text-4xl font-semibold mb-6 text-teal-100">Jeevan Chakra</p>
+                    <p class="text-2xl md:text-3xl mb-8 text-amber-200 font-medium">पैसा चलाता नहीं - जीवन चलाता है</p>
+                    <p class="text-xl md:text-2xl text-teal-50 mb-12 max-w-3xl mx-auto">Life Infrastructure. Not Just Finance.</p>
+                    <a href="#waitlist" class="inline-block bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-full text-lg transition transform hover:scale-105 shadow-lg">
+                        Become a Chakra Member
+                    </a>
+                </div>
+
+                <!-- Slide 2: The Promise -->
+                <div class="carousel-slide text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Build ₹1 Lakh/Month</h2>
+                    <p class="text-2xl md:text-3xl mb-8 text-teal-100">Passive Income in 12-15 Years</p>
+                    <p class="text-xl text-teal-50 mb-12 max-w-2xl mx-auto">7-instrument self-sustaining cycle. Start with ₹45,000/month investment.</p>
+                    <a href="#waitlist" class="inline-block bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-full text-lg transition transform hover:scale-105 shadow-lg">
+                        Join First 100 Members
+                    </a>
+                </div>
+
+                <!-- Slide 3: The Wheel -->
+                <div class="carousel-slide text-center">
+                    <div class="flex justify-center mb-8">
+                        <svg class="w-40 h-40 chakra-pulse" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="rgba(255,255,255,0.1)"/>
+                            <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="#F4A261" stroke-width="3" stroke-dasharray="10,10"/>
+                            <!-- 8 dots rotating -->
+                            <circle cx="50" cy="5" r="6" fill="#F4A261"/>
+                            <circle cx="88" cy="20" r="6" fill="#F4A261"/>
+                            <circle cx="95" cy="50" r="6" fill="#F4A261"/>
+                            <circle cx="88" cy="80" r="6" fill="#F4A261"/>
+                            <circle cx="50" cy="95" r="6" fill="#F4A261"/>
+                            <circle cx="12" cy="80" r="6" fill="#F4A261"/>
+                            <circle cx="5" cy="50" r="6" fill="#F4A261"/>
+                            <circle cx="12" cy="20" r="6" fill="#F4A261"/>
+                            <circle cx="50" cy="50" r="10" fill="white"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">The Self-Sustaining Wheel</h2>
+                    <p class="text-xl text-teal-50 mb-12 max-w-2xl mx-auto">Money flows P2P → Bonds → REITs → InvITs → G-Secs → POMIS → FD<br/>Returns reinvest automatically until freedom</p>
+                    <a href="#system" class="inline-block bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-full text-lg transition transform hover:scale-105 shadow-lg">
+                        See How It Works
+                    </a>
+                </div>
+
+                <!-- Slide 4: Founding Members -->
+                <div class="carousel-slide text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Join 100 Founding Members</h2>
+                    <p class="text-2xl md:text-3xl mb-8 text-amber-200">Get Lifetime 50% Discount</p>
+                    <p class="text-xl text-teal-50 mb-12 max-w-2xl mx-auto">Only 2.5% success fee (instead of 5%)<br/>No setup fee. No monthly subscription.</p>
+                    <a href="#waitlist" class="inline-block bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-full text-lg transition transform hover:scale-105 shadow-lg">
+                        Secure Your Spot
+                    </a>
+                </div>
+
             </div>
+        </div>
+        <!-- Carousel Indicators -->
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center gap-3">
+            <button onclick="goToSlide(0)" class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition"></button>
+            <button onclick="goToSlide(1)" class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition"></button>
+            <button onclick="goToSlide(2)" class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition"></button>
+            <button onclick="goToSlide(3)" class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition"></button>
         </div>
     </header>
 
@@ -125,33 +194,90 @@
         </div>
     </section>
 
-    <!-- System Section -->
+    <!-- System Section with CLICKABLE Cards -->
     <section id="system" class="bg-gradient-to-br from-teal-50 to-emerald-50 py-20">
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto">
                 <h2 class="text-4xl font-bold text-jc-teal text-center mb-12">The Jeevan Chakra System</h2>
                 
                 <div class="grid md:grid-cols-4 gap-6 mb-16">
-                    <div class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-teal/20 text-center">
+                    <!-- JC Shield -->
+                    <div onclick="toggleCard('shield')" class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-teal/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
                         <div class="text-4xl mb-3">🛡️</div>
                         <h3 class="font-bold text-jc-teal mb-2">JC Shield</h3>
                         <p class="text-sm text-gray-600">Protection Layer</p>
+                        <p class="text-xs text-jc-teal mt-2">Click to learn more →</p>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-green/20 text-center">
+                    <!-- JC Grow -->
+                    <div onclick="toggleCard('grow')" class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-green/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
                         <div class="text-4xl mb-3">🌱</div>
                         <h3 class="font-bold text-jc-green mb-2">JC Grow</h3>
                         <p class="text-sm text-gray-600">Growth Layer</p>
+                        <p class="text-xs text-jc-green mt-2">Click to learn more →</p>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-amber/40 text-center">
+                    <!-- JC Flow -->
+                    <div onclick="toggleCard('flow')" class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-amber/40 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
                         <div class="text-4xl mb-3">💧</div>
                         <h3 class="font-bold text-jc-amber mb-2">JC Flow</h3>
                         <p class="text-sm text-gray-600">Income Layer</p>
+                        <p class="text-xs text-jc-amber mt-2">Click to learn more →</p>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-md border-2 border-purple-200 text-center">
+                    <!-- JC Gyaan -->
+                    <div onclick="toggleCard('gyaan')" class="bg-white rounded-2xl p-6 shadow-md border-2 border-purple-200 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
                         <div class="text-4xl mb-3">🧠</div>
                         <h3 class="font-bold text-purple-700 mb-2">JC Gyaan</h3>
                         <p class="text-sm text-gray-600">Knowledge Layer</p>
+                        <p class="text-xs text-purple-700 mt-2">Click to learn more →</p>
                     </div>
+                </div>
+
+                <!-- Expandable Details -->
+                <div id="card-shield" class="hidden bg-white rounded-3xl shadow-xl p-8 mb-8 border-2 border-jc-teal/20">
+                    <h3 class="text-2xl font-bold text-jc-teal mb-4">🛡️ JC Shield - Protection Layer</h3>
+                    <p class="text-gray-700 mb-4">Your safety net. These instruments guarantee returns and protect capital:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Bank FD - 7% annual, liquid safety</li>
+                        <li>RBI G-Secs - 6.5-7% sovereign guarantee</li>
+                        <li>POMIS - 7.4% monthly income</li>
+                        <li>Corporate Bonds - 9-10% quarterly</li>
+                    </ul>
+                    <button onclick="toggleCard('shield')" class="mt-4 text-jc-teal hover:text-jc-amber">Close ✕</button>
+                </div>
+
+                <div id="card-grow" class="hidden bg-white rounded-3xl shadow-xl p-8 mb-8 border-2 border-jc-green/20">
+                    <h3 class="text-2xl font-bold text-jc-green mb-4">🌱 JC Grow - Growth Layer</h3>
+                    <p class="text-gray-700 mb-4">Long-term wealth building through capital appreciation:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Mutual Funds - 18-25% annual (SWP after 3 years)</li>
+                        <li>Stocks - 15-20% + dividends (diversified 30 stocks)</li>
+                        <li>Not part of daily cycle - Protection Fund assets</li>
+                    </ul>
+                    <button onclick="toggleCard('grow')" class="mt-4 text-jc-green hover:text-jc-amber">Close ✕</button>
+                </div>
+
+                <div id="card-flow" class="hidden bg-white rounded-3xl shadow-xl p-8 mb-8 border-2 border-jc-amber/40">
+                    <h3 class="text-2xl font-bold text-jc-amber mb-4">💧 JC Flow - Income Layer</h3>
+                    <p class="text-gray-700 mb-4">Daily, weekly, monthly income generators in the cycle:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>P2P Lending - 18-45% annual, daily returns</li>
+                        <li>REITs - 7-8% real estate income, quarterly</li>
+                        <li>InvITs - 8-9% infrastructure income, quarterly</li>
+                        <li>Returns flow instrument to instrument automatically</li>
+                    </ul>
+                    <button onclick="toggleCard('flow')" class="mt-4 text-jc-amber hover:text-jc-teal">Close ✕</button>
+                </div>
+
+                <div id="card-gyaan" class="hidden bg-white rounded-3xl shadow-xl p-8 mb-8 border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4">🧠 JC Gyaan - Knowledge Layer</h3>
+                    <p class="text-gray-700 mb-4">Educational content to make you self-sufficient:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Understanding each instrument's risk-return</li>
+                        <li>Tax optimization strategies</li>
+                        <li>Monthly performance reports & insights</li>
+                        <li>Decision tools: withdrawal calculators, risk quizzes</li>
+                        <li>Life stage planning guides</li>
+                    </ul>
+                    <button onclick="toggleCard('gyaan')" class="mt-4 text-purple-700 hover:text-jc-amber">Close ✕</button>
                 </div>
 
                 <div class="bg-white rounded-3xl shadow-xl p-10">
@@ -210,7 +336,7 @@
             <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-jc-teal/10">
                 <form action="https://formsubmit.co/ojhabanking@gmail.com" method="POST" class="space-y-4">
                     <input type="hidden" name="_subject" value="New Jeevan Chakra Waitlist Member">
-                    <input type="hidden" name="_next" value="https://jeevanchakra.com/thank-you">
+                    <input type="hidden" name="_next" value="https://jeevanchakra-landing.up.railway.app/thank-you.html">
                     <input type="hidden" name="_captcha" value="false">
                     
                     <input type="text" name="name" placeholder="Your Name" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-jc-teal focus:outline-none transition">
@@ -248,7 +374,6 @@
                         <div class="space-y-2 text-sm">
                             <a href="/privacy-policy.html" class="block text-teal-100 hover:text-jc-amber transition">Privacy Policy</a>
                             <a href="/refund-policy.html" class="block text-teal-100 hover:text-jc-amber transition">Refund Policy</a>
-                            <a href="/terms.html" class="block text-teal-100 hover:text-jc-amber transition">Terms of Service</a>
                         </div>
                     </div>
                     <div>
@@ -267,5 +392,13 @@
         </div>
     </footer>
 
-</body>
-</html>
+    <!-- JavaScript -->
+    <script>
+        // Carousel Auto-rotation
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        function showSlide(n) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.
