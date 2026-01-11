@@ -10,11 +10,11 @@ body {
 
 @keyframes pulse {
     0%, 100% { 
-        transform: scale(1) rotate(0deg); 
+        transform: scale(1); 
         opacity: 1; 
     }
     50% { 
-        transform: scale(1.05) rotate(180deg); 
+        transform: scale(1.05); 
         opacity: 0.8; 
     }
 }
