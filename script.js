@@ -1,7 +1,14 @@
 // Carousel Auto-rotation
 let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
+let slides = [];
 const carouselDelay = 9000; // ms between auto-rotations
+
+function initCarousel() {
+    slides = document.querySelectorAll('.carousel-slide');
+    if (slides.length === 0) return;
+    showSlide(0);
+    carouselInterval = setInterval(nextSlide, carouselDelay);
+}
 
 function showSlide(n) {
     if (slides.length === 0) return;
@@ -25,10 +32,14 @@ function goToSlide(n) {
 }
 
 // Auto-rotate
-let carouselInterval = setInterval(nextSlide, carouselDelay);
+let carouselInterval;
 
-// Initialize first slide
-showSlide(0);
+// Initialize carousel when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+} else {
+    initCarousel();
+}
 
 // Pause auto-rotation when user hovers the hero header
 const headerEl = document.querySelector('header');
