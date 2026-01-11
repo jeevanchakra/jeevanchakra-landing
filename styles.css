@@ -19,16 +19,72 @@ body {
     }
 }
 
+/* 360-degree continuous spinning wheel animation */
+.spinning-wheel {
+    animation: spin360 20s linear infinite;
+}
+
+@keyframes spin360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .carousel-slide {
     display: none;
     animation: fadeIn 0.5s ease-in;
+    min-height: 360px; /* enforce minimum height so slides are consistent */
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
 .carousel-slide.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Make SVGs inside slides consistent in visual size */
+.carousel-slide svg {
+    max-width: 240px;
+    max-height: 240px;
+    width: auto;
+    height: auto;
+}
+
+/* Slightly emphasize the 2nd slide (feature) to make the ₹1L/month message more prominent */
+.carousel-slide.feature {
+    padding: 2.5rem 1.5rem;
+}
+.carousel-slide.feature h2 {
+    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+}
+
+/* Make the indicators easier to click on small screens */
+.carousel-dot { cursor: pointer; }
+.carousel-dot.w-3 { width: 0.75rem; height: 0.75rem; }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .carousel-slide svg {
+        max-width: 180px;
+        max-height: 180px;
+    }
+    
+    .spinning-wheel {
+        max-width: 150px;
+        max-height: 150px;
+    }
 }
