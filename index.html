@@ -23,26 +23,7 @@
             }
         }
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .chakra-pulse { animation: pulse 3s ease-in-out infinite; }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
-            50% { transform: scale(1.05) rotate(180deg); opacity: 0.8; }
-        }
-        .carousel-slide {
-            display: none;
-            animation: fadeIn 0.5s ease-in;
-        }
-        .carousel-slide.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-50 text-gray-900">
     
@@ -392,13 +373,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Carousel Auto-rotation
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        
-        function showSlide(n) {
-            slides.forEach(s => s.classList.remove('active'));
-            dots.forEach(d => d.
+    <!-- Load JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
