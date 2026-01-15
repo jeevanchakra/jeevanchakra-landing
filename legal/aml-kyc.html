@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AML-KYC Policy - Jeevan Chakra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'jc-teal': '#0F4C5C',
+                        'jc-green': '#1B9C85',
+                        'jc-amber': '#F4A261',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-jc-teal text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <a href="../index.html" class="flex items-center gap-3 hover:opacity-80 transition">
+                <svg class="w-10 h-10" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#1B9C85" opacity="0.3"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#1B9C85" stroke-width="3"/>
+                    <circle cx="50" cy="10" r="4" fill="#F4A261"/>
+                    <circle cx="90" cy="50" r="4" fill="#F4A261"/>
+                    <circle cx="50" cy="90" r="4" fill="#F4A261"/>
+                    <circle cx="10" cy="50" r="4" fill="#F4A261"/>
+                </svg>
+                <div>
+                    <h1 class="text-xl font-bold">जीवन चक्र</h1>
+                    <p class="text-xs opacity-80">Jeevan Chakra</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <h1 class="text-4xl font-bold text-jc-teal mb-4">Anti-Money Laundering & Know Your Customer Policy</h1>
+        <p class="text-gray-600 mb-8">Last Updated: January 14, 2025</p>
+
+        <div class="bg-white rounded-lg shadow-md p-8 space-y-8">
+            
+            <!-- Commitment -->
+            <div class="bg-jc-teal/10 border-l-4 border-jc-teal p-6 rounded">
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">🛡️ Our Commitment to Financial Integrity</h2>
+                <p class="text-gray-700">
+                    Jeevan Chakra is committed to preventing money laundering, terrorist financing, and financial crimes. 
+                    This Anti-Money Laundering (AML) and Know Your Customer (KYC) Policy outlines our procedures to 
+                    comply with Indian laws and international standards.
+                </p>
+            </div>
+
+            <!-- 1. Legal Framework -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">1. Legal & Regulatory Framework</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>This policy is based on:</strong></p>
+                    <p>1.1. <strong>Prevention of Money Laundering Act (PMLA), 2002</strong> and PMLA Rules</p>
+                    <p>1.2. <strong>RBI Master Direction</strong> on KYC (updated periodically)</p>
+                    <p>1.3. <strong>SEBI (Investment Advisers) Regulations, 2013</strong></p>
+                    <p>1.4. <strong>Unlawful Activities (Prevention) Act, 1967</strong> (UAPA)</p>
+                    <p>1.5. <strong>Foreign Exchange Management Act (FEMA), 1999</strong></p>
+                    <p>1.6. <strong>Financial Action Task Force (FATF)</strong> Recommendations</p>
+                    <p>1.7. <strong>Income Tax Act, 1961</strong> (PAN requirements)</p>
+                </div>
+            </section>
+
+            <!-- 2. Applicability -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">2. Who Must Comply</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>This policy applies to:</strong></p>
+                    <p>2.1. All clients and users of Jeevan Chakra services</p>
+                    <p>2.2. Indian residents, NRIs, and foreign nationals investing in India</p>
+                    <p>2.3. Both individual and corporate/institutional clients</p>
+                    <p>2.4. All Jeevan Chakra employees, agents, and representatives</p>
+                    
+                    <p class="mt-4 bg-red-50 p-4 rounded font-semibold">
+                        ⚠️ <strong>Mandatory Compliance:</strong> You CANNOT use our services without completing KYC. 
+                        Providing false KYC information is a criminal offense under Indian law.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. KYC Requirements -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">3. KYC Documentation Requirements</h2>
+                
+                <div class="space-y-4 text-gray-700">
+                    <p class="font-bold">You MUST provide the following documents:</p>
+                    
+                    <div class="bg-teal-50 p-4 rounded">
+                        <h3 class="font-bold text-jc-teal mb-3">A. For Individual Indian Residents:</h3>
+                        <p class="font-semibold mb-2">Mandatory Documents:</p>
+                        <ul class="list-disc ml-6 space-y-2">
+                            <li><strong>PAN Card</strong> (Permanent Account Number) - Mandatory for all financial transactions above ₹50,000</li>
+                            <li><strong>Aadhaar Card</strong> (with consent for authentication) OR alternative ID proof:
+                                <ul class="list-disc ml-6 mt-1">
+                                    <li>Passport</li>
+                                    <li>Voter ID</li>
+                                    <li>Driving License</li>
+                                </ul>
+                            </li>
+                            <li><strong>Proof of Address</strong> (if different from ID):
+                                <ul class="list-disc ml-6 mt-1">
+                                    <li>Bank statement (last 3 months)</li>
+                                    <li>Utility bill (electricity, water, gas)</li>
+                                    <li>Rent agreement</li>
+                                    <li>Aadhaar (if not used as primary ID)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Recent Photograph</strong> (passport size)</li>
+                            <li><strong>Bank Account Proof:</strong> Cancelled cheque or bank statement</li>
+                        </ul>
+                        <p class="mt-3 text-sm italic">Documents must be valid, clear, and not older than 3 months (for address proof).</p>
+                    </div>
+
+                    <div class="bg-amber-50 p-4 rounded">
+                        <h3 class="font-bold text-jc-amber mb-3">B. For Non-Resident Indians (NRIs):</h3>
+                        <ul class="list-disc ml-6 space-y-2">
+                            <li><strong>Valid Indian Passport</strong></li>
+                            <li><strong>PAN Card</strong> (mandatory)</li>
+                            <li><strong>Overseas Address Proof:</strong>
+                                <ul class="list-disc ml-6 mt-1">
+                                    <li>Foreign utility bill, bank statement, or residence permit</li>
+                                    <li>Must show current country of residence</li>
+                                </ul>
+                            </li>
+                            <li><strong>NRE/NRO Bank Account</strong> details (for repatriation compliance)</li>
+                            <li><strong>Photograph</strong></li>
+                            <li><strong>Tax Residency Certificate</strong> (if claiming tax treaty benefits)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-emerald-50 p-4 rounded">
+                        <h3 class="font-bold text-emerald-700 mb-3">C. For Foreign Nationals (Non-Indians):</h3>
+                        <ul class="list-disc ml-6 space-y-2">
+                            <li><strong>Valid Passport</strong> with valid Indian visa (if required)</li>
+                            <li><strong>PAN Card</strong> (issued by Indian Income Tax Department) - Mandatory</li>
+                            <li><strong>Proof of Overseas Address</strong></li>
+                            <li><strong>Photograph</strong></li>
+                            <li><strong>Source of Funds Declaration</strong></li>
+                            <li><strong>FEMA Compliance:</strong> Declaration of investment under FDI/FII/FVCI route (if applicable)</li>
+                        </ul>
+                        <p class="mt-3 text-sm font-semibold">Note: Foreign portfolio investments in India are subject to FEMA regulations and require RBI/SEBI approvals.</p>
+                    </div>
+
+                    <div class="bg-purple-50 p-4 rounded">
+                        <h3 class="font-bold text-purple-700 mb-3">D. Additional Requirements for High-Value Clients:</h3>
+                        <p class="mb-2">For investments above ₹10 Lakhs or classified as "High Risk," we may require:</p>
+                        <ul class="list-disc ml-6 space-y-2">
+                            <li><strong>Income Proof:</strong> ITR, Form 16, salary slips</li>
+                            <li><strong>Net Worth Statement</strong></li>
+                            <li><strong>Source of Funds Declaration</strong> (detailed explanation of fund origins)</li>
+                            <li><strong>Enhanced Due Diligence (EDD):</strong> Additional identity verification, in-person verification, or video KYC</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. KYC Verification Process -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">4. KYC Verification Process</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>Our verification process:</strong></p>
+                    
+                    <p>4.1. <strong>Document Submission:</strong> Upload documents through our secure platform.</p>
+                    <p>4.2. <strong>Automated Verification:</strong> Documents are verified using:</p>
+                    <ul class="list-disc ml-8 space-y-1">
+                        <li>PAN verification with Income Tax database</li>
+                        <li>Aadhaar authentication (with your consent via OTP)</li>
+                        <li>Bank account verification (penny drop test)</li>
+                    </ul>
+                    <p>4.3. <strong>Manual Review:</strong> Our compliance team reviews all documents for authenticity.</p>
+                    <p>4.4. <strong>Video KYC (if required):</strong> Live video verification as per RBI guidelines.</p>
+                    <p>4.5. <strong>CKYC Registration:</strong> Your KYC is registered with Central KYC Registry (CERSAI) as per RBI mandate.</p>
+                    <p>4.6. <strong>Approval Timeline:</strong> KYC verification typically completed within 2-5 business days.</p>
+                    
+                    <p class="mt-4 bg-yellow-50 p-4 rounded">
+                        <strong>Rejection Reasons:</strong> KYC may be rejected if documents are:
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Expired, illegible, or tampered</li>
+                            <li>Do not match across documents (name/address mismatch)</li>
+                            <li>Belong to someone else (identity theft attempt)</li>
+                            <li>Suspected to be fraudulent</li>
+                        </ul>
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5. Ongoing Monitoring -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">5. Ongoing KYC & Transaction Monitoring</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p>5.1. <strong>Periodic KYC Updates:</strong> You must update KYC every 10 years (as per RBI) or whenever there are material changes (address, name, etc.).</p>
+                    <p>5.2. <strong>Transaction Monitoring:</strong> We monitor all transactions for suspicious patterns:</p>
+                    <ul class="list-disc ml-8 space-y-1">
+                        <li>Unusually large or frequent transactions</li>
+                        <li>Transactions inconsistent with your profile</li>
+                        <li>Sudden changes in investment behavior</li>
+                        <li>Attempts to avoid reporting thresholds</li>
+                    </ul>
+                    <p>5.3. <strong>Source of Funds Verification:</strong> We may request additional documentation if:</p>
+                    <ul class="list-disc ml-8 space-y-1">
+                        <li>Investment amount is significantly higher than declared income</li>
+                        <li>Funds come from high-risk jurisdictions</li>
+                        <li>Multiple transactions from different bank accounts</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 6. Risk-Based Approach -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">6. Risk-Based Customer Classification</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p><strong>We classify customers into risk categories:</strong></p>
+                    
+                    <div class="bg-green-50 p-4 rounded">
+                        <h3 class="font-bold text-green-700 mb-2">Low Risk Customers:</h3>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Salaried employees with stable income</li>
+                            <li>Government employees, PSU employees</li>
+                            <li>Small investments (under ₹5 Lakhs/year)</li>
+                            <li>Fully verified KYC with CKYC registration</li>
+                        </ul>
+                        <p class="mt-2 text-sm"><strong>Requirements:</strong> Standard KYC documentation.</p>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded">
+                        <h3 class="font-bold text-yellow-700 mb-2">Medium Risk Customers:</h3>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Self-employed professionals, business owners</li>
+                            <li>NRIs from low-risk countries</li>
+                            <li>Medium investments (₹5-25 Lakhs/year)</li>
+                        </ul>
+                        <p class="mt-2 text-sm"><strong>Requirements:</strong> Standard KYC + Income proof.</p>
+                    </div>
+
+                    <div class="bg-red-50 p-4 rounded">
+                        <h3 class="font-bold text-red-700 mb-2">High Risk Customers (Enhanced Due Diligence):</h3>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>Politically Exposed Persons (PEPs) - government officials, public figures</li>
+                            <li>NRIs from high-risk jurisdictions (FATF blacklist/grey list countries)</li>
+                            <li>Cash-intensive businesses (real estate, jewelry, gaming)</li>
+                            <li>High-value investments (above ₹25 Lakhs/year)</li>
+                            <li>Clients with complex ownership structures</li>
+                            <li>Clients refusing to provide source of funds</li>
+                        </ul>
+                        <p class="mt-2 text-sm"><strong>Requirements:</strong> Enhanced KYC + Source of wealth documentation + Senior management approval.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Suspicious Activity Reporting -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">7. Suspicious Transaction Reporting</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>We are legally required to report suspicious activities to authorities. Examples include:</strong></p>
+                    
+                    <div class="bg-red-50 p-4 rounded">
+                        <h3 class="font-bold text-red-700 mb-2">🚨 Red Flags We Monitor:</h3>
+                        <ul class="list-disc ml-6 space-y-2">
+                            <li>Structuring transactions to avoid reporting thresholds (e.g., multiple deposits of ₹9.9 Lakhs)</li>
+                            <li>Providing false or inconsistent information</li>
+                            <li>Refusing to provide source of funds or KYC documents</li>
+                            <li>Transactions with sanctioned countries or entities</li>
+                            <li>Frequent deposits and immediate withdrawals (layering)</li>
+                            <li>Use of multiple bank accounts without clear purpose</li>
+                            <li>Transactions inconsistent with customer profile (e.g., low-income individual making high-value investments)</li>
+                            <li>Reluctance to meet in person or provide contact information</li>
+                            <li>Use of shell companies or nominees to hide beneficial ownership</li>
+                        </ul>
+                    </div>
+
+                    <p class="mt-4"><strong>Reporting Obligations:</strong></p>
+                    <p>7.1. <strong>To FIU-IND:</strong> Suspicious Transaction Reports (STR) filed with Financial Intelligence Unit - India within 7 days of detection.</p>
+                    <p>7.2. <strong>Cash Transactions:</strong> All cash transactions above ₹10 Lakhs reported to FIU-IND (CTR - Cash Transaction Report).</p>
+                    <p>7.3. <strong>Confidentiality:</strong> We CANNOT inform you if we file an STR (as per PMLA guidelines).</p>
+                </div>
+            </section>
+
+            <!-- 8. Prohibited Customers -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">8. Prohibited & Restricted Customers</h2>
+                <div class="bg-red-100 border-l-4 border-red-600 p-6 space-y-3 text-gray-700">
+                    <p class="font-bold text-red-700">WE WILL NOT ONBOARD OR SERVE:</p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Individuals/entities on UN sanctions lists, OFAC lists, or Indian government watch lists</li>
+                        <li>Persons from FATF high-risk jurisdictions (Iran, North Korea, etc.) unless approved exceptions</li>
+                        <li>Shell companies with no genuine business activity</li>
+                        <li>Customers refusing to complete KYC</li>
+                        <li>Individuals providing false or forged documents</li>
+                        <li>Entities involved in illegal activities (terrorism financing, drug trafficking, arms dealing)</li>
+                        <li>Anonymous or pseudonymous accounts (cryptocurrency wallets without identity)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 9. Record Keeping -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">9. Record Retention</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>As required by PMLA and RBI guidelines:</strong></p>
+                    <p>9.1. <strong>KYC Documents:</strong> Retained for 7 years after account closure.</p>
+                    <p>9.2. <strong>Transaction Records:</strong> All investment transactions retained for 7 years.</p>
+                    <p>9.3. <strong>Communication Records:</strong> Emails, calls, chats retained for 7 years.</p>
+                    <p>9.4. <strong>STR/CTR Reports:</strong> Copies retained for 7 years.</p>
+                    <p>9.5. <strong>Format:</strong> Records maintained in both physical and electronic form, securely encrypted.</p>
+                </div>
+            </section>
+
+            <!-- 10. Employee Training -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">10. Internal Controls & Training</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p>10.1. <strong>Compliance Officer:</strong> Designated AML-KYC Compliance Officer responsible for policy implementation.</p>
+                    <p>10.2. <strong>Employee Training:</strong> All staff receive annual AML-KYC training.</p>
+                    <p>10.3. <strong>Independent Audit:</strong> Annual AML audit by external auditor.</p>
+                    <p>10.4. <strong>Technology:</strong> Automated transaction monitoring systems to detect suspicious patterns.</p>
+                </div>
+            </section>
+
+            <!-- 11. Customer Responsibilities -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">11. Your Responsibilities</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>You MUST:</strong></p>
+                    <p>11.1. Provide accurate, complete, and genuine KYC documents.</p>
+                    <p>11.2. Update KYC information whenever there are material changes (address, name, citizenship).</p>
+                    <p>11.3. Respond promptly to requests for additional information or clarification.</p>
+                    <p>11.4. Not use our services for money laundering, terrorism financing, or any illegal activities.</p>
+                    <p>11.5. Ensure funds invested are from legitimate sources.</p>
+                    
+                    <p class="mt-4 bg-red-50 p-4 rounded font-semibold">
+                        <strong>Legal Consequences:</strong> Providing false KYC information or using our services for illegal activities 
+                        is punishable under PMLA (imprisonment up to 7 years and fines) and other Indian laws.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 12. Account Suspension/Closure -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">12. Account Suspension or Termination</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>We reserve the right to immediately suspend or terminate your account if:</strong></p>
+                    <ul class="list-disc ml-8 space-y-2">
+                        <li>KYC documents are found to be false, forged, or expired</li>
+                        <li>You refuse to update KYC or provide additional documentation</li>
+                        <li>Suspicious activity is detected</li>
+                        <li>You appear on sanctions lists or are classified as high-risk without adequate documentation</li>
+                        <li>Required by law enforcement or regulatory authorities</li>
+                    </ul>
+                    <p class="mt-4"><strong>Impact:</strong> Account freezing, investment redemption delays, reporting to FIU-IND.</p>
+                </div>
+            </section>
+
+            <!-- 13. Cooperation with Authorities -->
+            <section>
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">13. Cooperation with Law Enforcement</h2>
+                <div class="space-y-3 text-gray-700">
+                    <p>13.1. We fully cooperate with Indian law enforcement, FIU-IND, Enforcement Directorate (ED), CBI, and other authorities.</p>
+                    <p>13.2. We may be required to freeze accounts or provide customer information without prior notice to you.</p>
+                    <p>13.3. We comply with all legal summons, court orders, and regulatory inquiries.</p>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="bg-jc-teal/5 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-jc-teal mb-4">📞 AML-KYC Compliance Contact</h2>
+                <div class="space-y-2 text-gray-700">
+                    <p><strong>Principal Officer (AML-KYC):</strong> [Name]</p>
+                    <p><strong>Email:</strong> <a href="mailto:compliance@jeevanchakra.in" class="text-jc-teal underline">compliance@jeevanchakra.in</a></p>
+                    <p><strong>Phone:</strong> [Your number]</p>
+                    <p><strong>Address:</strong> [Your registered address]</p>
+                </div>
+            </section>
+
+            <!-- Acknowledgment -->
+            <div class="bg-jc-green/10 border-l-4 border-jc-green p-6 rounded mt-8">
+                <p class="text-gray-700 font-semibold">
+                    BY USING JEEVAN CHAKRA'S SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO COMPLY 
+                    WITH THIS AML-KYC POLICY. YOU CONFIRM THAT ALL INFORMATION PROVIDED IS TRUE AND ACCURATE.
+                </p>
+            </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="text-center mt-8">
+            <a href="../index.html" class="inline-block bg-jc-teal hover:bg-jc-teal/80 text-white font-bold py-3 px-8 rounded-lg transition">
+                ← Back to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-jc-teal text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2025 Jeevan Chakra. All rights reserved.</p>
+            <p class="text-xs mt-2 opacity-80">Compliant with PMLA 2002 & RBI Guidelines</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!-- ==========================================
+     SYSTEM COMPONENT
+     ========================================== -->
+<div id="jc-system-section" class="bg-gradient-to-br from-teal-50 to-emerald-50 py-20">
+    <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-jc-teal text-center mb-12">The Jeevan Chakra System</h2>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <!-- Toggle buttons (acting as cards) -->
+                <div onclick="toggleSystemCard('shield')"
+                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-teal/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
+                    <div class="text-4xl mb-3">🛡️</div>
+                    <h3 class="font-bold text-jc-teal mb-2">JC Shield</h3>
+                    <p class="text-sm text-gray-600">Protection Layer</p>
+                </div>
+                <div onclick="toggleSystemCard('grow')"
+                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-green/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
+                    <div class="text-4xl mb-3">📈</div>
+                    <h3 class="font-bold text-jc-green mb-2">JC Growth</h3>
+                    <p class="text-sm text-gray-600">Growth Engine</p>
+                </div>
+                <div onclick="toggleSystemCard('flow')"
+                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-amber/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
+                    <div class="text-4xl mb-3">💰</div>
+                    <h3 class="font-bold text-jc-amber mb-2">JC Flow</h3>
+                    <p class="text-sm text-gray-600">Cash Distribution</p>
+                </div>
+                <div onclick="toggleSystemCard('gyaan')"
+                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-emerald-400/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
+                    <div class="text-4xl mb-3">🧠</div>
+                    <h3 class="font-bold text-emerald-600 mb-2">JC Gyaan</h3>
+                    <p class="text-sm text-gray-600">Knowledge & Mastery</p>
+                </div>
+            </div>
+
+            <!-- Detail Cards -->
+            <div class="text-center min-h-[200px]">
+                <div id="card-shield"
+                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-jc-teal">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-2xl font-bold text-jc-teal">JC Shield - Protection First</h4>
+                        <button onclick="toggleSystemCard('shield')"
+                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">Term Life Insurance + Critical Illness + Disability. Your
+                        family's financial safety net.</p>
+                </div>
+                <div id="card-grow"
+                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-jc-green">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-2xl font-bold text-jc-green">JC Growth - Wealth Building</h4>
+                        <button onclick="toggleSystemCard('grow')"
+                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">Bonds, REITs, InvITs, G-Secs, POMIS, FDs. Diversified
+                        investment strategy.</p>
+                </div>
+                <div id="card-flow"
+                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-jc-amber">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-2xl font-bold text-jc-amber">JC Flow - Income Distribution</h4>
+                        <button onclick="toggleSystemCard('flow')"
+                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">Monthly cash flow from your growing capital. Building
+                        towards ₹1 Lakh/month passive income.</p>
+                </div>
+                <div id="card-gyaan"
+                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-emerald-400">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-2xl font-bold text-emerald-600">JC Gyaan - Mastery & Wisdom</h4>
+                        <button onclick="toggleSystemCard('gyaan')"
+                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">Advanced wealth structuring, tax optimization, and
+                        financial wisdom. Knowledge that outlives wealth.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

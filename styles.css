@@ -1,83 +1,102 @@
+/* ==========================================
+   JEEVAN CHAKRA - GLOBAL STYLES
+   ==========================================
+   Only global resets, fonts, and utilities
+   NO section-specific styles here
+   Place in root folder: /styles.css
+   ========================================== */
+
+/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-body { 
-    font-family: 'Inter', sans-serif; 
-}
-
-.chakra-pulse { 
-    animation: pulse 3s ease-in-out infinite; 
-}
-
-@keyframes pulse {
-    0%, 100% { 
-        transform: scale(1); 
-        opacity: 1; 
-    }
-    50% { 
-        transform: scale(1.05); 
-        opacity: 0.8; 
-    }
-}
-
-/* 360-degree continuous spinning wheel animation */
-.spinning-wheel {
-    animation: spin360 20s linear infinite;
-}
-
-@keyframes spin360 {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.carousel-slide {
-    display: none;
-    animation: fadeIn 0.5s ease-in;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+/* ==========================================
+   CSS RESET
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    z-index: 0;
 }
 
-.carousel-slide.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    z-index: 10;
+/* ==========================================
+   BASE TYPOGRAPHY
+   ========================================== */
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: 80px;
+    /* Compensate for fixed header */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* ==========================================
+   SMOOTH SCROLLING
+   ========================================== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    /* Fix for sticky header overlap */
 }
 
-/* SVGs inside slides */
-.carousel-slide svg {
-    max-width: 240px;
-    max-height: 240px;
-    width: auto;
-    height: auto;
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #F4A261;
+    outline-offset: 2px;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .carousel-slide svg {
-        max-width: 180px;
-        max-height: 180px;
+/* ==========================================
+   GLOBAL UTILITY - CHAKRA PULSE ANIMATION
+   ========================================== */
+.chakra-pulse {
+    animation: jc-global-chakra-pulse 3s ease-in-out infinite;
+}
+
+@keyframes jc-global-chakra-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
-    
-    .spinning-wheel {
-        max-width: 150px;
-        max-height: 150px;
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
     }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+
+    header,
+    footer,
+    nav,
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }

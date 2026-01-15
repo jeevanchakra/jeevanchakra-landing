@@ -1,0 +1,86 @@
+<!-- ==========================================
+     JEEVAN CHAKRA - HEADER COMPONENT
+     ==========================================
+     Navigation bar with logo and menu
+     Place in: components/header.html
+     ========================================== -->
+
+<nav
+    class="jc-header-nav text-white shadow-2xl fixed w-full z-50 top-0 left-0 bg-jc-teal backdrop-blur-md bg-opacity-90 transition-all duration-300">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="index.html"
+                class="jc-header-logo-link flex items-center gap-3 group hover:opacity-100 transition duration-300"
+                aria-label="Jeevan Chakra Home">
+                <div class="relative w-12 h-12 transition-transform duration-700 group-hover:rotate-180">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="#1B9C85" stroke-width="1.5" stroke-dasharray="4 4"
+                            opacity="0.6" />
+                        <circle cx="50" cy="50" r="35" stroke="#F4A261" stroke-width="1" opacity="0.9" />
+                        <path d="M50 20C50 20 65 35 65 50C65 65 50 80 50 80C50 80 35 65 35 50C35 35 50 20 50 20Z"
+                            fill="#1B9C85" fill-opacity="0.2" stroke="#1B9C85" stroke-width="2" />
+                        <path d="M50 20C50 20 80 50 50 80C20 50 50 20 50 20Z" stroke="#F4A261" stroke-width="1.5" />
+                        <circle cx="50" cy="50" r="6" fill="#F4A261" />
+                    </svg>
+                </div>
+                <div>
+                    <h1
+                        class="text-2xl font-bold tracking-tighter text-white group-hover:text-jc-amber transition-colors">
+                        Jeevan Chakra</h1>
+                    <p
+                        class="text-[0.65rem] uppercase tracking-widest text-teal-200 group-hover:text-teal-100 transition-colors">
+                        Life Infrastructure</p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="jc-header-desktop-nav hidden md:flex gap-6 items-center">
+                <a href="#jc-manifesto-section"
+                    class="jc-header-nav-link hover:text-jc-amber transition duration-300">Vision</a>
+                <a href="#jc-why-choose-section"
+                    class="jc-header-nav-link hover:text-jc-amber transition duration-300">Why Us</a>
+                <a href="#jc-system-section"
+                    class="jc-header-nav-link hover:text-jc-amber transition duration-300">System</a>
+                <a href="#jc-pricing-section"
+                    class="jc-header-nav-link hover:text-jc-amber transition duration-300">Pricing</a>
+                <a href="#jc-faq-section" class="jc-header-nav-link hover:text-jc-amber transition duration-300">FAQ</a>
+                <a href="#jc-waitlist-section"
+                    class="jc-header-cta-btn inline-block bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105">Join
+                    Waitlist</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="jc-header-mobile-menu-btn"
+                class="jc-header-mobile-btn md:hidden text-white focus:outline-none focus:ring-2 focus:ring-jc-amber rounded p-2"
+                aria-label="Toggle mobile menu" aria-expanded="false">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="jc-header-menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path id="jc-header-menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="jc-header-mobile-menu"
+            class="jc-header-mobile-menu hidden md:hidden mt-4 pb-4 border-t border-teal-600 pt-4">
+            <a href="#jc-manifesto-section"
+                class="jc-header-mobile-link block py-3 px-4 hover:text-jc-amber hover:bg-teal-700 rounded transition duration-300">Vision</a>
+            <a href="#jc-why-choose-section"
+                class="jc-header-mobile-link block py-3 px-4 hover:text-jc-amber hover:bg-teal-700 rounded transition duration-300">Why
+                Us</a>
+            <a href="#jc-system-section"
+                class="jc-header-mobile-link block py-3 px-4 hover:text-jc-amber hover:bg-teal-700 rounded transition duration-300">System</a>
+            <a href="#jc-pricing-section"
+                class="jc-header-mobile-link block py-3 px-4 hover:text-jc-amber hover:bg-teal-700 rounded transition duration-300">Pricing</a>
+            <a href="#jc-faq-section"
+                class="jc-header-mobile-link block py-3 px-4 hover:text-jc-amber hover:bg-teal-700 rounded transition duration-300">FAQ</a>
+            <a href="#jc-waitlist-section"
+                class="jc-header-mobile-cta block mt-3 bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-3 text-center rounded-lg transition duration-300">Join
+                Waitlist</a>
+        </div>
+    </div>
+</nav>

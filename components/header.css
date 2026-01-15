@@ -1,0 +1,54 @@
+/* ==========================================
+   JEEVAN CHAKRA - HEADER STYLES
+   ==========================================
+   Header-specific styles only
+   Place in: components/header.css
+   ========================================== */
+
+/* Fixed Header with Glassmorphism */
+.jc-header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(15, 76, 92, 0.95);
+    /* jc-teal with opacity */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Add padding to body so content doesn't hide behind fixed header */
+body {
+    padding-top: 80px;
+    /* Adjust based on header height */
+}
+
+.jc-header-mobile-menu {
+    animation: jc-header-mobile-slide-down 0.3s ease-out;
+}
+
+@keyframes jc-header-mobile-slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Active nav link indicator */
+.jc-header-nav-link.jc-header-active {
+    color: #F4A261;
+    font-weight: 600;
+}
+
+/* Logo hover effect */
+.jc-header-logo-link:hover svg {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

@@ -1,0 +1,12 @@
+/* ==========================================
+   HERO COMPONENT CSS
+   ========================================== */
+
+/* 
+   We rely mostly on Tailwind classes in the HTML for layout.
+   Just ensuring the transitions work smoothly.
+*/
+
+.carousel-slide {
+    /* Using tailwind transition-opacity duration-1000 */
+}
