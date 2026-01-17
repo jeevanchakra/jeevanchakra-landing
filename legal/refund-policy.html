@@ -4,51 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refund Policy - Jeevan Chakra</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'jc-teal': '#0F4C5C',
-                        'jc-green': '#1B9C85',
-                        'jc-amber': '#F4A261',
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-jc-teal text-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3">
-                <!-- Logo SVG -->
-                <svg class="w-10 h-10" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="#1B9C85" opacity="0.3"/>
-                    <circle cx="50" cy="50" r="30" fill="none" stroke="#1B9C85" stroke-width="3"/>
-                    <circle cx="50" cy="50" r="20" fill="none" stroke="#F4A261" stroke-width="2" stroke-dasharray="5,5"/>
-                    <circle cx="50" cy="20" r="4" fill="#F4A261"/>
-                    <circle cx="80" cy="50" r="4" fill="#F4A261"/>
-                    <circle cx="50" cy="80" r="4" fill="#F4A261"/>
-                    <circle cx="20" cy="50" r="4" fill="#F4A261"/>
-                </svg>
-                <div>
-                    <h1 class="text-xl font-bold">जीवन चक्र</h1>
-                    <p class="text-xs opacity-80">Jeevan Chakra</p>
-                </div>
-            </a>
-            <div class="hidden md:flex gap-6">
-                <a href="index.html#top" class="hover:text-jc-amber transition">Home</a>
-                <a href="index.html#vision" class="hover:text-jc-amber transition">Vision</a>
-                <a href="index.html#system" class="hover:text-jc-amber transition">System</a>
-                <a href="index.html#pricing" class="hover:text-jc-amber transition">Pricing</a>
-            </div>
-        </div>
-    </nav>
+    <meta name="description" content="Jeevan Chakra - Life Infrastructure">
 
-    <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230F4C5C'/><circle cx='50' cy='50' r='25' fill='none' stroke='%231B9C85' stroke-width='3'/><circle cx='50' cy='20' r='4' fill='%23F4A261'/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind-config.js"></script>
+
+    <!-- Global Styles & Loader -->
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts/header-footer-loader.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding-top: 80px;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER PLACEHOLDER -->
+    <div id="header-placeholder"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 py-12 max-w-4xl">
         <h1 class="text-4xl font-bold text-jc-teal mb-8">Refund & Cancellation Policy</h1>
         <p class="text-gray-600 mb-8">Last Updated: January 4, 2025</p>
 
@@ -151,42 +141,10 @@
             </section>
         </div>
     </div>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-jc-teal text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8 mb-8">
-                    <div>
-                        <h3 class="font-bold text-xl mb-4">जीवन चक्र</h3>
-                        <p class="text-teal-100 text-sm">Life Infrastructure, Not Just Finance</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-3">Legal</h4>
-                        <div class="space-y-2 text-sm">
-                            <a href="privacy-policy.html" class="block text-teal-100 hover:text-jc-amber transition">Privacy Policy</a>
-                            <a href="refund-policy.html" class="block text-teal-100 hover:text-jc-amber transition">Refund Policy</a>
-                            <a href="index.html#pricing" class="block text-teal-100 hover:text-jc-amber transition">Pricing</a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-3">Contact</h4>
-                        <div class="space-y-2 text-sm text-teal-100">
-                            <p>Email: ojhabanking@gmail.com</p>
-                            <p>WhatsApp: +91-999-999-9999</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-t border-teal-600 pt-8 text-center">
-                    <p class="text-sm text-teal-200">© 2025 Jeevan Chakra. All rights reserved.</p>
-                    <p class="text-xs text-teal-300 mt-2">Investments are subject to market risks. Not a guaranteed return product.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Load JavaScript -->
-    <script src="script.js?v=2"></script>
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
 
 </body>
 </html>

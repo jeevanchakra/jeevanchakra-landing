@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Jeevan Chakra</title>
+    <meta name="description" content="Jeevan Chakra - Life Infrastructure">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230F4C5C'/><circle cx='50' cy='50' r='25' fill='none' stroke='%231B9C85' stroke-width='3'/><circle cx='50' cy='20' r='4' fill='%23F4A261'/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind-config.js"></script>
+
+    <!-- Global Styles & Loader -->
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts/header-footer-loader.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding-top: 80px;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER PLACEHOLDER -->
+    <div id="header-placeholder"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <div class="flex-grow flex items-center justify-center">
+            <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-jc-teal mb-2">Join Jeevan Chakra</h1>
+                    <p class="text-gray-500">Start your journey to financial freedom</p>
+                </div>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jc-teal focus:border-transparent outline-none transition"
+                            placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jc-teal focus:border-transparent outline-none transition"
+                            placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Create Password</label>
+                        <input type="password"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jc-teal focus:border-transparent outline-none transition"
+                            placeholder="••••••••">
+                    </div>
+                    <button type="button"
+                        class="w-full bg-white border border-gray-300 text-gray-700 font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition mb-4"
+                        onclick="alert('Google Sign Up integration requires API setup.')">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+                        Sign up with Google
+                    </button>
+                    <button type="button"
+                        class="w-full bg-jc-amber hover:bg-amber-500 text-gray-900 font-bold py-3 rounded-lg transition transform hover:scale-[1.02]">
+                        Create Account
+                    </button>
+                </form>
+                <div class="mt-4 pt-4 border-t border-gray-200 bg-gray-50 -mx-8 px-8 -mb-8 pb-8 rounded-b-2xl">
+                    <p class="text-xs text-gray-700 text-center leading-relaxed">
+                        By submitting this form, you agree to our
+                        <a href="/legal/terms-of-service.html"
+                            class="text-jc-teal underline hover:text-teal-700 font-semibold">Terms of Service</a>,
+                        <a href="/legal/privacy-policy.html"
+                            class="text-jc-teal underline hover:text-teal-700 font-semibold">Privacy Policy</a>, and
+                        <a href="/legal/dnd-policy.html"
+                            class="text-jc-teal underline hover:text-teal-700 font-semibold">DND & Consent Policy</a>.
+                    </p>
+                    <p class="text-[10px] text-gray-600 text-center mt-2">
+                        <a href="/legal/disclaimer.html" class="text-gray-700 underline hover:text-jc-teal">Investment
+                            Disclaimer</a> •
+                        <a href="/legal/refund-policy.html"
+                            class="text-gray-700 underline hover:text-jc-teal">Refund</a> •
+                        <a href="/legal/data-protection.html" class="text-gray-700 underline hover:text-jc-teal">Data
+                            Protection</a> •
+                        <a href="/legal/cookie-policy.html"
+                            class="text-gray-700 underline hover:text-jc-teal">Cookie</a> •
+                        <a href="/legal/aml-kyc.html" class="text-gray-700 underline hover:text-jc-teal">AML-KYC</a> •
+                        <a href="/legal/grievance.html" class="text-gray-700 underline hover:text-jc-teal">Grievance</a>
+                        •
+                        <a href="/legal/ip-policy.html" class="text-gray-700 underline hover:text-jc-teal">IP</a>
+                    </p>
+                </div>
+                <div class="mt-6 text-center text-sm text-gray-600">
+                    Already have an account? <a href="login.html" class="text-jc-teal font-bold hover:underline">Log
+                        in</a>
+                </div>
+                <div class="mt-4 text-center">
+                    <a href="../../index.html" class="text-gray-400 hover:text-gray-600 text-xs">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer (Global Copy) -->
+    </main>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
+
+</body>
+
+</html>

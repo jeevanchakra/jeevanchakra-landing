@@ -1,65 +1,213 @@
 <!-- ==========================================
-     PRICING COMPONENT
+     PRICING COMPONENT (Enhanced)
      ========================================== -->
-<div id="jc-pricing-section" class="bg-white py-20">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-jc-teal text-center mb-4">Transparent Pricing</h2>
-            <p class="text-center text-gray-600 mb-12 text-lg">We only succeed when you succeed</p>
+<section id="jc-pricing-section" class="py-24 bg-gray-900 text-white relative">
 
-            <!-- Fee Structure Box -->
-            <div class="bg-gradient-to-br from-jc-teal to-jc-green text-white rounded-3xl p-10 shadow-2xl mb-12">
-                <h3 class="text-3xl font-bold mb-8 text-center">💰 How We Charge</h3>
+    <!-- Glow Effect -->
+    <div
+        class="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-jc-teal rounded-full blur-[120px] opacity-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+    </div>
 
-                <div class="grid md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
-                        <div class="text-4xl mb-2">₹0</div>
-                        <p class="text-teal-100">Setup Fee</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
-                        <div class="text-4xl mb-2">₹0</div>
-                        <p class="text-teal-100">Monthly Fee</p>
-                    </div>
-                    <div class="bg-jc-amber/90 rounded-xl p-6 text-center text-gray-900">
-                        <div class="text-4xl font-bold mb-2">2.5%*</div>
-                        <p class="font-semibold">Only on Profits</p>
-                    </div>
-                </div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-jc-amber mb-2">Transparent Pricing</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">We Earn Only When <span class="text-jc-amber">You
+                    Earn</span></h2>
+            <p class="text-xl text-gray-400">No hidden setup fees. No monthly retainers. Just a pure success-based
+                partnership.</p>
+        </div>
 
-                <div class="bg-white/10 backdrop-blur rounded-xl p-6 mb-6">
-                    <h4 class="font-bold text-xl mb-4 text-jc-amber">📊 Example Calculation:</h4>
-                    <div class="space-y-2 text-lg">
-                        <p>Your profit this month: <span class="font-bold">₹10,000</span></p>
-                        <p>Our success fee (2.5%): <span class="font-bold text-jc-amber">₹250</span></p>
-                        <p class="text-xl font-bold border-t border-white/20 pt-2 mt-2">You keep: ₹9,750</p>
-                    </div>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
-                <p class="text-sm text-teal-100 text-center">
-                    *Founding Members get <strong class="text-jc-amber">50% discount forever</strong> (2.5% instead of
-                    regular 5%)
-                </p>
+            <!-- Standard Plan -->
+            <div
+                class="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700 hover:border-jc-green/50 transition duration-300 flex flex-col group">
+                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-jc-green transition">Standard Member</h3>
+                <p class="text-gray-400 mb-6">For those starting their freedom journey.</p>
+                <div class="text-5xl font-bold mb-1">5%</div>
+                <p class="text-sm text-gray-400 mb-8 uppercase tracking-wide">Success Fee on Profits</p>
+
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <svg class="w-5 h-5 text-jc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Full Portfolio Planning
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <svg class="w-5 h-5 text-jc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Quarterly Review
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <svg class="w-5 h-5 text-jc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Access to 5 Asset Classes
+                    </li>
+                </ul>
+                <a href="#jc-waitlist-section"
+                    class="block w-full text-center py-4 rounded-xl border border-gray-600 hover:bg-jc-green hover:text-gray-900 transition font-bold">Join
+                    Waitlist</a>
             </div>
 
-            <!-- Investment Recommendation -->
-            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border-2 border-jc-amber/30">
-                <h3 class="text-2xl font-bold text-jc-teal mb-4 flex items-center gap-2">
-                    <span>💡</span> Our Investment Recommendation
+            <!-- Wealth Accelerator (Bridge Plan) -->
+            <div
+                class="bg-gray-800 rounded-3xl p-8 border border-jc-amber/30 hover:border-jc-amber transition duration-300 flex flex-col relative group">
+                <div
+                    class="absolute -top-4 left-1/2 -translate-x-1/2 bg-jc-amber text-gray-900 text-xs font-black px-4 py-1 rounded-full uppercase tracking-tighter shadow-lg opacity-0 group-hover:opacity-100 transition-all">
+                    Most Popular</div>
+                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-jc-amber transition">Wealth Accelerator
                 </h3>
-                <p class="text-gray-700 text-lg mb-4">
-                    To build <strong class="text-jc-teal">₹1 Lakh/month passive income</strong> in 12-15 years through
-                    our 7-instrument self-sustaining cycle, we recommend:
-                </p>
-                <div class="bg-white rounded-xl p-6 shadow-md">
-                    <p class="text-3xl font-bold text-jc-teal mb-2">Start with ₹45,000/month</p>
-                    <p class="text-gray-600">This amount allows proper diversification across all 7 instruments and
-                        reaches the goal timeline.</p>
-                    <p class="text-sm text-gray-500 mt-4">
-                        <em>Note: This is our recommended amount. You can start with less, but the timeline to reach
-                            ₹1L/month will extend accordingly.</em>
+                <p class="text-gray-400 mb-6">Optimized for rapid growth scale.</p>
+                <div class="text-5xl font-bold mb-1 text-white">4%</div>
+                <p class="text-sm text-gray-400 mb-8 uppercase tracking-wide">Success Fee on Profits</p>
+
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <svg class="w-5 h-5 text-jc-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <strong>Monthly</strong> Strategy Optimization
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <svg class="w-5 h-5 text-jc-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Tax-Harvesting Strategies
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <svg class="w-5 h-5 text-jc-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Access to <strong>SGB & Bonds</strong>
+                    </li>
+                </ul>
+                <a href="#jc-waitlist-section"
+                    class="block w-full text-center py-4 rounded-xl bg-gray-700 hover:bg-jc-amber hover:text-gray-900 transition font-bold shadow-lg shadow-amber-900/10">Upgrade
+                    to Accelerator</a>
+            </div>
+
+            <!-- Founding Member (Premium) -->
+            <div
+                class="bg-gradient-to-b from-teal-900 to-gray-900 rounded-3xl p-8 border-2 border-jc-amber relative overflow-hidden shadow-2xl shadow-amber-900/20 group">
+                <div class="absolute top-0 right-0 bg-jc-amber text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                    LIMITED SPOTS</div>
+
+                <h3 class="text-2xl font-bold mb-2 text-white">Founding Member</h3>
+                <p class="text-teal-200 mb-6 group-hover:text-jc-amber transition">Lifetime privileges for early
+                    believers.</p>
+                <div class="text-5xl font-bold mb-1 text-jc-amber">2.5%</div>
+                <p class="text-sm text-gray-400 mb-8 uppercase tracking-wide">Success Fee (50% OFF Forever)</p>
+
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-white">
+                        <svg class="w-5 h-5 text-jc-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <strong>Priority Access</strong> to High-Yield Assets
+                    </li>
+                    <li class="flex items-center gap-3 text-white">
+                        <svg class="w-5 h-5 text-jc-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Direct WhatsApp Support
+                    </li>
+                    <li class="flex items-center gap-3 text-white">
+                        <svg class="w-5 h-5 text-jc-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <strong>All 7 Asset Classes</strong> Included
+                    </li>
+                </ul>
+                <a href="#jc-waitlist-section"
+                    class="block w-full text-center py-4 rounded-xl bg-gradient-to-r from-jc-amber to-orange-500 hover:from-amber-400 hover:to-orange-400 text-gray-900 font-bold shadow-lg transition transform group-hover:scale-[1.02]">Claim
+                    Founding Status</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+</div>
+</section>
+
+<!-- Investment Recommendation (WOW Factor Upgrade) -->
+<div class="mt-20 max-w-4xl mx-auto">
+    <div class="relative group">
+        <!-- Glow Backdrop -->
+        <div
+            class="absolute -inset-1 bg-gradient-to-r from-jc-amber to-orange-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+        </div>
+
+        <div class="relative bg-gray-800 rounded-2xl p-8 md:p-12 border border-white/10 overflow-hidden">
+            <!-- Decorative SVG Pattern -->
+            <div class="absolute top-0 right-0 opacity-10 pointer-events-none">
+                <svg width="200" height="200" viewBox="0 0 100 100">
+                    <circle cx="100" cy="0" r="80" fill="none" stroke="#F4A261" stroke-width="0.5" />
+                    <circle cx="100" cy="0" r="60" fill="none" stroke="#F4A261" stroke-width="0.3" />
+                </svg>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1">
+                    <h3 class="text-3xl font-bold text-white mb-4 flex items-center gap-3">
+                        <span class="bg-jc-amber/20 p-2 rounded-lg text-2xl">💡</span>
+                        The Wealth Creation Path
+                    </h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        To build a sustainable <strong class="text-jc-amber">₹1 Lakh/month passive income</strong> in
+                        12-15 years, our system requires a specific calibration of the 7-instrument cycle.
                     </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-white/80">
+                            <span class="text-jc-amber text-xl">✓</span>
+                            <span>Full diversification across all 7 asset classes</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-white/80">
+                            <span class="text-jc-amber text-xl">✓</span>
+                            <span>Automatic rebalancing every market cycle</span>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="w-full md:w-auto">
+                    <div
+                        class="bg-gradient-to-br from-teal-900 to-gray-900 rounded-2xl p-8 border-2 border-jc-amber shadow-2xl transform hover:scale-105 transition duration-500">
+                        <p class="text-sm font-bold text-jc-amber uppercase tracking-widest mb-2">Recommended Entry</p>
+                        <div class="flex items-baseline gap-1 mb-2">
+                            <span class="text-4xl md:text-5xl font-black text-white">₹45,000</span>
+                            <span class="text-gray-400 font-medium">/month</span>
+                        </div>
+                        <p class="text-teal-100/60 text-xs leading-tight mb-6 max-w-[180px]">
+                            Optimized for the 15-year freedom horizon.
+                        </p>
+                        <button
+                            onclick="document.getElementById('jc-waitlist-section').scrollIntoView({behavior: 'smooth'})"
+                            class="w-full bg-jc-amber hover:bg-amber-400 text-gray-900 font-black py-4 rounded-xl transition shadow-lg shadow-amber-600/20">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-white/5 flex items-center gap-4 text-sm text-gray-500 italic">
+                <span class="text-jc-amber">Note:</span> This is our recommended "Golden Ratio". You can start with any
+                amount, but the freedom timeline will scale accordingly.
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
 </div>

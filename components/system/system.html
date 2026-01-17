@@ -1,82 +1,111 @@
 <!-- ==========================================
-     SYSTEM COMPONENT
+     SYSTEM COMPONENT (The Engine)
      ========================================== -->
-<div id="jc-system-section" class="bg-gradient-to-br from-teal-50 to-emerald-50 py-20">
-    <div class="container mx-auto px-4">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold text-jc-teal text-center mb-12">The Jeevan Chakra System</h2>
+<section id="jc-system-section" class="py-24 bg-white relative overflow-hidden">
+    <!-- Connecting Line (Desktop Background) -->
+    <div
+        class="hidden md:block absolute top-[60%] left-0 w-full h-1 bg-gradient-to-r from-transparent via-jc-teal to-transparent opacity-20 z-0">
+    </div>
 
-            <div class="grid md:grid-cols-4 gap-6 mb-16">
-                <!-- Toggle buttons (acting as cards) -->
-                <div onclick="toggleSystemCard('shield')"
-                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-teal/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
-                    <div class="text-4xl mb-3">🛡️</div>
-                    <h3 class="font-bold text-jc-teal mb-2">JC Shield</h3>
-                    <p class="text-sm text-gray-600">Protection Layer</p>
-                </div>
-                <div onclick="toggleSystemCard('grow')"
-                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-green/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
-                    <div class="text-4xl mb-3">📈</div>
-                    <h3 class="font-bold text-jc-green mb-2">JC Growth</h3>
-                    <p class="text-sm text-gray-600">Growth Engine</p>
-                </div>
-                <div onclick="toggleSystemCard('flow')"
-                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-jc-amber/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
-                    <div class="text-4xl mb-3">💰</div>
-                    <h3 class="font-bold text-jc-amber mb-2">JC Flow</h3>
-                    <p class="text-sm text-gray-600">Cash Distribution</p>
-                </div>
-                <div onclick="toggleSystemCard('gyaan')"
-                    class="bg-white rounded-2xl p-6 shadow-md border-2 border-emerald-400/20 text-center cursor-pointer hover:shadow-xl hover:scale-105 transition transform">
-                    <div class="text-4xl mb-3">🧠</div>
-                    <h3 class="font-bold text-emerald-600 mb-2">JC Gyaan</h3>
-                    <p class="text-sm text-gray-600">Knowledge & Mastery</p>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-jc-teal mb-2">The Engine</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">How The <span
+                    class="text-jc-teal">Chakra</span> Spins</h2>
+            <p class="text-xl text-gray-600">A closed-loop hydraulic money system. Capital flows into High-Yield tanks,
+                overflows into Stability Reservoirs, and irrigates your Life Needs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Step 1: Inflow -->
+            <div class="relative group">
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-gray-400 h-full transform transition hover:-translate-y-2">
+                    <div
+                        class="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-3xl shadow-lg z-10">
+                        💵
+                    </div>
+                    <div class="mt-8 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">1. The Inflow</h3>
+                        <p class="text-gray-600 text-sm">You contribute a fixed monthly amount (SIP). This is the fuel
+                            for the engine.</p>
+                    </div>
+                    <!-- Connection Arrow (Mobile Down, Desktop Right) -->
+                    <div class="hidden md:block absolute top-1/2 -right-6 text-jc-teal animate-pulse">➤</div>
+                    <div
+                        class="md:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 text-jc-teal rotate-90 animate-pulse">
+                        ➤</div>
                 </div>
             </div>
 
-            <!-- Detail Cards -->
-            <div class="text-center min-h-[200px]">
-                <div id="card-shield"
-                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-jc-teal">
-                    <div class="flex justify-between items-center mb-4">
-                        <h4 class="text-2xl font-bold text-jc-teal">JC Shield - Protection First</h4>
-                        <button onclick="toggleSystemCard('shield')"
-                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
+            <!-- Step 2: Protection & Growth -->
+            <div class="relative group">
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-jc-teal h-full transform transition hover:-translate-y-2">
+                    <div
+                        class="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-16 bg-jc-teal rounded-full flex items-center justify-center text-3xl shadow-lg z-10 text-white">
+                        🛡️
                     </div>
-                    <p class="text-gray-700 leading-relaxed">Term Life Insurance + Critical Illness + Disability. Your
-                        family's financial safety net.</p>
-                </div>
-                <div id="card-grow"
-                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-jc-green">
-                    <div class="flex justify-between items-center mb-4">
-                        <h4 class="text-2xl font-bold text-jc-green">JC Growth - Wealth Building</h4>
-                        <button onclick="toggleSystemCard('grow')"
-                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
+                    <div class="mt-8 text-center">
+                        <h3 class="text-xl font-bold text-jc-teal mb-2">2. Secure & Grow</h3>
+                        <p class="text-gray-600 text-sm">First, we secure you with term & health insurance. Then,
+                            capital splits into 7 asset classes for optimal growth.</p>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">Bonds, REITs, InvITs, G-Secs, POMIS, FDs. Diversified
-                        investment strategy.</p>
-                </div>
-                <div id="card-flow"
-                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-jc-amber">
-                    <div class="flex justify-between items-center mb-4">
-                        <h4 class="text-2xl font-bold text-jc-amber">JC Flow - Income Distribution</h4>
-                        <button onclick="toggleSystemCard('flow')"
-                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed">Monthly cash flow from your growing capital. Building
-                        towards ₹1 Lakh/month passive income.</p>
-                </div>
-                <div id="card-gyaan"
-                    class="hidden system-card-detail bg-white rounded-2xl p-8 shadow-lg border-l-4 border-emerald-400">
-                    <div class="flex justify-between items-center mb-4">
-                        <h4 class="text-2xl font-bold text-emerald-600">JC Gyaan - Mastery & Wisdom</h4>
-                        <button onclick="toggleSystemCard('gyaan')"
-                            class="text-gray-500 hover:text-gray-700 text-2xl leading-none">&times;</button>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed">Advanced wealth structuring, tax optimization, and
-                        financial wisdom. Knowledge that outlives wealth.</p>
+                    <!-- Connection Arrow -->
+                    <div class="hidden md:block absolute top-1/2 -right-6 text-jc-teal animate-pulse">➤</div>
+                    <div
+                        class="md:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 text-jc-teal rotate-90 animate-pulse">
+                        ➤</div>
                 </div>
             </div>
+
+            <!-- Step 3: Overflow (Harvest) -->
+            <div class="relative group">
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-jc-amber h-full transform transition hover:-translate-y-2">
+                    <div
+                        class="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-16 bg-jc-amber rounded-full flex items-center justify-center text-3xl shadow-lg z-10 text-white">
+                        🔄
+                    </div>
+                    <div class="mt-8 text-center">
+                        <h3 class="text-xl font-bold text-jc-amber mb-2">3. The Overflow</h3>
+                        <p class="text-gray-600 text-sm">Profits don't sit idle. They "overflow" into safe reservoirs
+                            (Bonds, FDs) to lock in gains.</p>
+                    </div>
+                    <!-- Connection Arrow -->
+                    <div class="hidden md:block absolute top-1/2 -right-6 text-jc-teal animate-pulse">➤</div>
+                    <div
+                        class="md:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 text-jc-teal rotate-90 animate-pulse">
+                        ➤</div>
+                </div>
+            </div>
+
+            <!-- Step 4: Freedom -->
+            <div class="relative group">
+                <div
+                    class="bg-gradient-to-b from-teal-900 to-gray-900 rounded-2xl p-6 shadow-2xl border-t-4 border-green-400 h-full transform transition hover:-translate-y-2 scale-105">
+                    <div
+                        class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-4xl shadow-green-500/50 shadow-lg z-10 animate-bounce">
+                        🕊️
+                    </div>
+                    <div class="mt-8 text-center text-white">
+                        <h3 class="text-xl font-bold text-green-400 mb-2">4. Freedom</h3>
+                        <p class="text-gray-300 text-sm">The engine eventually runs itself. You enjoy ₹1 Lakh/month
+                            passive income for life.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 text-center">
+            <button onclick="document.getElementById('jc-pricing-section').scrollIntoView({behavior: 'smooth'})"
+                class="inline-flex items-center gap-2 text-jc-teal font-bold hover:text-jc-amber transition">
+                View Pricing Model <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
         </div>
     </div>
-</div>
+</section>

@@ -31,19 +31,30 @@
 
         // Validation functions
         function validateName() {
-            const value = nameInput.value.trim();
-            const error = document.getElementById('name-error');
+            try {
+                const value = nameInput.value.trim();
+                const error = document.getElementById('name-error');
 
-            if (value.length < 2) {
-                error.classList.remove('hidden');
-                nameInput.classList.add('border-red-500');
-                nameInput.classList.remove('border-green-500');
+                if (value.length < 2) {
+                    error.classList.remove('hidden');
+                    nameInput.classList.add('border-red-500');
+                    nameInput.classList.remove('border-green-500');
+                    return false;
+                } else {
+                    error.classList.add('hidden');
+                    nameInput.classList.remove('border-red-500');
+                    nameInput.classList.add('border-green-500');
+                    return true;
+                }
+            } catch (error) {
+                if (window.JCErrorLogger) {
+                    window.JCErrorLogger.error(
+                        window.JCErrorLogger.Category.VALIDATION,
+                        'Error in name validation',
+                        error
+                    );
+                }
                 return false;
-            } else {
-                error.classList.add('hidden');
-                nameInput.classList.remove('border-red-500');
-                nameInput.classList.add('border-green-500');
-                return true;
             }
         }
 
@@ -120,58 +131,90 @@
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            // Validate all fields
-            const isNameValid = validateName();
-            const isEmailValid = validateEmail();
-            const isPhoneValid = validatePhone();
-            const isMessageValid = validateMessage();
-            const isBudgetValid = validateBudget();
-
-            if (!isNameValid || !isEmailValid || !isPhoneValid || !isMessageValid || !isBudgetValid) {
-                alert('Please fix all errors before submitting');
-                return;
-            }
-
-            // Disable submit button
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '⏳ Submitting...';
-
-            // Prepare data
-            const formData = {
-                name: nameInput.value.trim(),
-                email: emailInput.value.trim(),
-                phone: phoneInput.value.trim(),
-                message: messageInput.value.trim(),
-                budget: budgetInput.value
-            };
-
             try {
-                // YOUR ACTUAL GOOGLE APPS SCRIPT URL
-                const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxhHsNmb0P4NQHMsaqOcYO-LE1zCfd8IE2RnG6nEhVvTTTFh8SppwiaZUcy16yn91Y7/exec';
+                // Validate all fields
+                const isNameValid = validateName();
+                const isEmailValid = validateEmail();
+                const isPhoneValid = validatePhone();
+                const isMessageValid = validateMessage();
+                const isBudgetValid = validateBudget();
 
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
+                if (!isNameValid || !isEmailValid || !isPhoneValid || !isMessageValid || !isBudgetValid) {
+                    alert('Please fix all errors before submitting');
+                    return;
+                }
 
-                // Since mode is no-cors, we can't read response but assume success if no error
-                submitBtn.innerHTML = '✓ Success!';
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '⏳ Submitting...';
 
-                // Redirect to thank you or show message
-                setTimeout(() => {
-                    // Try to redirect if thank-you page exists, or just alert
-                    window.location.href = 'thank-you.html';
-                }, 1000);
+                // Prepare data
+                const formData = {
+                    name: nameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    message: messageInput.value.trim(),
+                    budget: budgetInput.value
+                };
 
+                try {
+                    // YOUR ACTUAL GOOGLE APPS SCRIPT URL
+                    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxhHsNmb0P4NQHMsaqOcYO-LE1zCfd8IE2RnG6nEhVvTTTFh8SppwiaZUcy16yn91Y7/exec';
+
+                    const response = await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    // Log successful submission
+                    if (window.JCErrorLogger) {
+                        window.JCErrorLogger.info(
+                            window.JCErrorLogger.Category.COMPONENT,
+                            'Form submitted successfully',
+                            { formType: 'waitlist' }
+                        );
+                    }
+
+                    // Since mode is no-cors, we can't read response but assume success if no error
+                    submitBtn.innerHTML = '✓ Success!';
+
+                    // Redirect to thank you or show message
+                    setTimeout(() => {
+                        // Try to redirect if thank-you page exists, or just alert
+                        window.location.href = 'thank-you.html';
+                    }, 1000);
+
+                } catch (error) {
+                    if (window.JCErrorLogger) {
+                        window.JCErrorLogger.error(
+                            window.JCErrorLogger.Category.NETWORK,
+                            'Form submission failed',
+                            error,
+                            { formType: 'waitlist', formData: { email: formData.email } }
+                        );
+                    } else {
+                        console.error('Submission error:', error);
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Join Founding Members';
+                    alert('There was an error submitting the form. Please try again or email us directly at ojhabanking@gmail.com');
+                }
             } catch (error) {
-                console.error('Submission error:', error);
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Join Founding Members';
-                alert('There was an error submitting the form. Please try again or email us directly at ojhabanking@gmail.com');
+                if (window.JCErrorLogger) {
+                    window.JCErrorLogger.error(
+                        window.JCErrorLogger.Category.COMPONENT,
+                        'Error in form submit handler',
+                        error
+                    );
+                }
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Join Founding Members';
+                }
             }
         });
     }

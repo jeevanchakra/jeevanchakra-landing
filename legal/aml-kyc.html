@@ -4,44 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AML-KYC Policy - Jeevan Chakra</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'jc-teal': '#0F4C5C',
-                        'jc-green': '#1B9C85',
-                        'jc-amber': '#F4A261',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="../styles.css">
-</head>
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-jc-teal text-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <a href="../index.html" class="flex items-center gap-3 hover:opacity-80 transition">
-                <svg class="w-10 h-10" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="#1B9C85" opacity="0.3"/>
-                    <circle cx="50" cy="50" r="30" fill="none" stroke="#1B9C85" stroke-width="3"/>
-                    <circle cx="50" cy="10" r="4" fill="#F4A261"/>
-                    <circle cx="90" cy="50" r="4" fill="#F4A261"/>
-                    <circle cx="50" cy="90" r="4" fill="#F4A261"/>
-                    <circle cx="10" cy="50" r="4" fill="#F4A261"/>
-                </svg>
-                <div>
-                    <h1 class="text-xl font-bold">जीवन चक्र</h1>
-                    <p class="text-xs opacity-80">Jeevan Chakra</p>
-                </div>
-            </a>
-        </div>
-    </nav>
+    <meta name="description" content="Jeevan Chakra - Life Infrastructure">
 
-    <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230F4C5C'/><circle cx='50' cy='50' r='25' fill='none' stroke='%231B9C85' stroke-width='3'/><circle cx='50' cy='20' r='4' fill='%23F4A261'/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind-config.js"></script>
+
+    <!-- Global Styles & Loader -->
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts/header-footer-loader.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding-top: 80px;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER PLACEHOLDER -->
+    <div id="header-placeholder"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 py-12 max-w-4xl">
         <h1 class="text-4xl font-bold text-jc-teal mb-4">Anti-Money Laundering & Know Your Customer Policy</h1>
         <p class="text-gray-600 mb-8">Last Updated: January 14, 2025</p>
 
@@ -392,19 +389,12 @@
         </div>
 
         <!-- Back to Home -->
-        <div class="text-center mt-8">
-            <a href="../index.html" class="inline-block bg-jc-teal hover:bg-jc-teal/80 text-white font-bold py-3 px-8 rounded-lg transition">
-                ← Back to Home
-            </a>
-        </div>
+        
     </div>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-jc-teal text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-sm">© 2025 Jeevan Chakra. All rights reserved.</p>
-            <p class="text-xs mt-2 opacity-80">Compliant with PMLA 2002 & RBI Guidelines</p>
-        </div>
-    </footer>
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
+
 </body>
 </html>

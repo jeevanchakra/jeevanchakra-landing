@@ -1,92 +1,71 @@
-/* ==========================================
-   HERO COMPONENT JS
-   ========================================== */
-
 (function () {
-    'use strict';
-
     let currentSlide = 0;
-    let slides = [];
-    let dots = [];
-    let carouselInterval;
-    const CAROUSEL_DELAY = 5000;
+    const totalSlides = 5;
 
-    function initHeroCarousel() {
-        slides = document.querySelectorAll('.carousel-slide');
-        dots = document.querySelectorAll('.carousel-dot');
+    function showSlide(n) {
+        try {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
 
-        if (slides.length === 0) return;
+            if (slides.length === 0 || dots.length === 0) {
+                if (window.JCErrorLogger) {
+                    window.JCErrorLogger.warn(
+                        window.JCErrorLogger.Category.COMPONENT,
+                        'Hero slides or dots not found',
+                        { slidesCount: slides.length, dotsCount: dots.length }
+                    );
+                }
+                return;
+            }
 
-        // Ensure first slide is active
-        showSlide(0);
-        startAutoRotate();
+            slides.forEach(s => s.classList.remove('hero-slide-active'));
+            dots.forEach(d => d.classList.remove('hero-dot-active'));
 
-        // Expose function globally for the dot onClick handlers in HTML
-        window.goToSlide = function (n) {
-            stopAutoRotate();
-            showSlide(n);
-            startAutoRotate();
-        };
+            currentSlide = (n + totalSlides) % totalSlides;
 
-        // Pause on hover
-        const heroSection = document.getElementById('jc-hero-section');
-        if (heroSection) {
-            heroSection.addEventListener('mouseover', stopAutoRotate);
-            heroSection.addEventListener('mouseout', startAutoRotate);
+            if (slides[currentSlide]) {
+                slides[currentSlide].classList.add('hero-slide-active');
+            }
+            if (dots[currentSlide]) {
+                dots[currentSlide].classList.add('hero-dot-active');
+            }
+        } catch (error) {
+            if (window.JCErrorLogger) {
+                window.JCErrorLogger.error(
+                    window.JCErrorLogger.Category.COMPONENT,
+                    'Error in hero slide navigation',
+                    error,
+                    { slideNumber: n }
+                );
+            }
         }
     }
 
-    function showSlide(n) {
-        slides.forEach(slide => {
-            slide.classList.remove('opacity-100', 'pointer-events-auto');
-            slide.classList.add('opacity-0', 'pointer-events-none');
-            // Reset position relative for the active one to take flow if needed, 
-            // but we used absolute positioning layout. 
-            // Actually, in the HTML, all are absolute except the first one initially?
-            // Let's standardise: all absolute except one? No, parent has height.
-            // The HTML structure used absolute for 2,3,4.
-            // We'll toggle opacity.
-        });
+    window.goToSlide = function (n) {
+        showSlide(n);
+    };
 
-        currentSlide = (n % slides.length + slides.length) % slides.length;
-
-        const activeSlide = slides[currentSlide];
-        activeSlide.classList.remove('opacity-0', 'pointer-events-none');
-        activeSlide.classList.add('opacity-100', 'pointer-events-auto');
-
-        updateDots();
-    }
-
-    function nextSlide() {
+    window.nextSlide = function () {
         showSlide(currentSlide + 1);
-    }
+    };
 
-    function updateDots() {
-        dots.forEach((dot, index) => {
-            if (index === currentSlide) {
-                dot.classList.remove('bg-white/50');
-                dot.classList.add('bg-white');
-            } else {
-                dot.classList.add('bg-white/50');
-                dot.classList.remove('bg-white');
-            }
-        });
-    }
+    window.prevSlide = function () {
+        showSlide(currentSlide - 1);
+    };
 
-    function startAutoRotate() {
-        stopAutoRotate(); // prevent multiple intervals
-        carouselInterval = setInterval(nextSlide, CAROUSEL_DELAY);
-    }
-
-    function stopAutoRotate() {
-        clearInterval(carouselInterval);
-    }
-
-    // Initialize
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initHeroCarousel);
-    } else {
-        initHeroCarousel();
+    // Auto-rotate every 7 seconds
+    try {
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 7000);
+    } catch (error) {
+        if (window.JCErrorLogger) {
+            window.JCErrorLogger.error(
+                window.JCErrorLogger.Category.COMPONENT,
+                'Error starting hero slider auto-rotation',
+                error
+            );
+        }
     }
 
 })();

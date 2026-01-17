@@ -12,19 +12,155 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%230F4C5C'/><circle cx='50' cy='50' r='25' fill='none' stroke='%231B9C85' stroke-width='3'/><circle cx='50' cy='20' r='4' fill='%23F4A261'/></svg>">
 
+    <!-- Preconnect to CDN -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts with display=swap for performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-top: 80px;
+            margin: 0;
+            background-color: #f9fafb;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #0F4C5C;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loaded .loading-spinner {
+            display: none;
+        }
+    </style>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind-config.js"></script>
 
-    <!-- Global CSS -->
+    <!-- Error Handling Scripts - Load FIRST before all other scripts -->
+    <script src="scripts/error-logger.js"></script>
+    <script src="scripts/error-handler.js"></script>
+
+    <!-- Global CSS - defer non-critical CSS -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <!-- Error Notification Styles -->
+    <style>
+        #jc-error-notification-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            max-width: 400px;
+        }
+
+        .jc-error-notification {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            animation: slideInRight 0.3s ease-out;
+        }
+
+        .jc-error-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .jc-error-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .jc-error-message {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .jc-error-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+
+        .jc-error-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body id="top" class="bg-gray-50 text-gray-900 font-sans antialiased">
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Error Notification Container -->
+    <div id="jc-error-notification-container"></div>
 
     <!-- Header -->
     <div id="header-placeholder"></div>
@@ -32,19 +168,63 @@
     <!-- Main Content -->
     <main>
         <section id="hero-placeholder" class="reveal"></section>
-        <section id="manifesto-placeholder" class="reveal"></section>
-        <section id="why-choose-placeholder" class="reveal"></section>
-        <section id="system-placeholder" class="reveal"></section>
-        <section id="pricing-placeholder" class="reveal"></section>
-        <section id="faq-placeholder" class="reveal"></section>
-        <section id="waitlist-placeholder" class="reveal"></section>
+        <section id="jc-manifesto-section" class="reveal">
+            <div id="manifesto-placeholder"></div>
+        </section>
+        <section id="jc-why-choose-section" class="reveal">
+            <div id="why-choose-placeholder"></div>
+        </section>
+        <section id="jc-system-section" class="reveal">
+            <div id="system-placeholder"></div>
+        </section>
+        <section id="jc-pricing-section" class="reveal">
+            <div id="pricing-placeholder"></div>
+        </section>
+        <section id="testimonials-placeholder" class="reveal"></section>
+        <section id="jc-faq-section" class="reveal">
+            <div id="faq-placeholder"></div>
+        </section>
+        <section id="jc-waitlist-section" class="reveal">
+            <div id="waitlist-placeholder"></div>
+        </section>
     </main>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Component Loader -->
-    <script src="scripts/loader.js"></script>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919031436018" target="_blank" rel="noopener"
+        class="fixed bottom-6 right-6 z-[100] bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 flex items-center justify-center group"
+        aria-label="Contact on WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.084 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+        <span
+            class="hidden md:block absolute right-full mr-4 bg-white text-gray-900 px-3 py-1 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow-lg">Chat
+            with us</span>
+    </a>
+
+    <!-- Component Loader - async for better performance -->
+    <script src="scripts/loader.js" async></script>
+
+    <!-- Remove loading spinner when page is fully loaded -->
+    <script>
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+
+            // Handle hash navigation after content is loaded
+            if (window.location.hash) {
+                setTimeout(function () {
+                    const targetId = window.location.hash;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 500); // Wait 500ms for content to load
+            }
+        });
+    </script>
 </body>
 
 </html>
